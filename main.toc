@@ -1,0 +1,18 @@
+\contentsline {chapter}{\numberline {1}Getting Shit Installed}{5}
+\contentsline {section}{\numberline {1.1}Introduction}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {section}{\numberline {1.2}What the hell is Stack?}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{5}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {1.3}Installing Stack}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {section}{\numberline {1.4}Using Stack}{6}
+\contentsline {paragraph}{}{6}
+\contentsline {paragraph}{}{6}

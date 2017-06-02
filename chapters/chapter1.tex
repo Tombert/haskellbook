@@ -1,0 +1,54 @@
+\chapter{Getting Shit Installed}
+
+\section{Introduction}
+\paragraph{}
+About a year ago, in my first attempt at writing this god damned book, I had to dedicate something like a hundred fucking pages to talking about how to get the fucking Haskell Platform working on Mac, Linux, and Windows. GHC (the most popular Haskell compiler) is kind of a fickle beast, and there always ended up being a ton of weird hacks and tricks to make your application portable. 
+
+
+\paragraph{}
+But there's not much point to doing that shit anymore since they finally solved all these problems and invented the Stack application.  At this point you really can just say "Fuck it, just install Stack". 
+
+\section{What the hell is Stack?}
+
+\paragraph{}
+Stack is a Haskell program by FPComplete to make it easier to make other Haskell programs.  
+
+\paragraph{}
+You'll actually find that to be a bit of a pattern in the Haskell universe.  It feels like half of all the programs for it are just there to make you feel cool because you're using a Haskell program, or to try to talk you into making more Haskell programs
+
+\paragraph{}
+Anyway, what exactly does Stack do?  In a nutshell: it manages your Haskell your entire Haskell project.  
+
+\paragraph{}
+Using Stack, you can have your dependencies, structure, compilation, and even your compiler.  In the process, you get something that man had previously only dreamed of: reproducible builds. 
+
+\paragraph{}
+This is new shit, since it used to be really fucking difficult to get different versions of GHC installed on the same machine, especially if you decided it would be a good idea to use a Linux package manager. 
+
+\section {Installing Stack}
+
+\paragraph{}
+Ok, enough rambling about this Stack shit, I'm getting tired of talking about it anyway.  
+
+\paragraph{}
+To go about installing it on a sane Mac or Linux platform, you should be able to do something to the effect of 
+
+\begin{verbatim}
+curl -sSL https://get.haskellstack.org/ | sh
+\end{verbatim}
+
+\paragraph{}
+If you're on a shitty operating system like Windows, you don't have access to tools that were invented in the last forty years like "pipe".  I guess it's just too advanced for Seattle. 
+
+What you'll need to do is just go to the haskellstack.org website, and download the Windows installer. 
+
+\paragraph{}
+By the time you read it, this has probably changed, so you'll have to look up the updated URL anyway.  I don't really know why I decided to use a printed medium to write a book about a fucking functional language that's hellbent on constantly updating. It's just going to get outdated.
+
+\section{Using Stack}
+\paragraph{}
+So now you should have stack installed, and all its glory is available to you.  Unless you installed it wrong.  Don't exclude that possibility, it will be your downfall.  
+
+
+\paragraph{}
+
