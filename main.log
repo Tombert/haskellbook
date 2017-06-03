@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  3 JUN 2017 18:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  3 JUN 2017 19:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -537,14 +537,18 @@ Overfull \hbox (6.9391pt too wide) in paragraph at lines 13--13
  (./chapters/foreword.tex [4
 
 
-] [5])
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[6])
 \openout2 = `./chapters/chapter1.aux'.
 
- (./chapters/chapter1.tex [6
-
-
-
-]
+ (./chapters/chapter1.tex
 Chapter 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 1.
@@ -552,7 +556,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 3.
-[1]
+[1
+
+
+
+]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
@@ -570,7 +578,7 @@ Here is how much of TeX's memory you used:
  6983 multiletter control sequences out of 15000+600000
  13954 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,9n,32p,429b,246s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,9n,32p,633b,245s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/sha
 re/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/pub
@@ -580,7 +588,7 @@ cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><
 xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt10.pfb>
-Output written on main.pdf (9 pages, 122022 bytes).
+Output written on main.pdf (9 pages, 126701 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  49 compressed objects within 1 object stream
