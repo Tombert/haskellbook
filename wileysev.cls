@@ -1913,9 +1913,7 @@ volume.} \vskip24pt\egroup
 \def\dofnote#1#2{\vtop{\hyphenpenalty=10000
 \advance\hsize -10pt \raggedright
 \footnotesize{\it #1. }\\{By #2}
-\noindent\hbox{\footnotesize
-Copyright \copyright\ \thecopyrightyear\ John Wiley \&
-Sons, Inc.}}}
+\noindent\hbox{}}}
 
 
 \def\offprintinfo#1#2{
