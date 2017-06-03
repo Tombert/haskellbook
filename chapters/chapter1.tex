@@ -2,8 +2,21 @@
 
 \section{Introduction}
 \paragraph{}
-About a year ago, in my first attempt at writing this god damned book, I had to dedicate something like a hundred fucking pages to talking about how to get the fucking Haskell Platform working on Mac, Linux, and Windows. GHC (the most popular Haskell compiler) is kind of a fickle beast, and there always ended up being a ton of weird hacks and tricks to make your application portable. 
+The shit that's always the hardest fucking part of getting into a langauge is getting the compiler and tooling set up.  Well, no, that's a fucking lie, there are lots of parts that are probably harder, but by the time you get to them you're probably already committed to the language so there's no use in complaining. 
 
+\subsection{GHC}
+\paragraph{}
+The most important thing you'll need to do Haskell development is The Glorious Haskell Compiler, or GHC for short. There are other Haskell compilers out there, like YHC or UHC, but I don't know anyone that uses them, and I can't be bothered to try them out myself. When people say ``Haskell", they usually seem to mean ``GHC"
+
+\subsection{Bullshit about GHC}
+\paragraph{}
+While GHC is what you need to to compile your Haskell program, it can be pretty frustrating between different point versions, and especially irritating between different platforms.  For the love of God, do \textit{not} just install GHC from the command line in your favorite operating system's package manager, since this will almost certainly be wrong, and confuse you.  
+
+\paragraph{}
+There's also the fact that GHC is \textit{only} the compiler.  Handling dependencies, managing the project files, and handling information about the project itself. 
+
+\section{The Shitty Old Way}
+Back in the day, the main way to get Haskell install
 
 \paragraph{}
 But there's not much point to doing that shit anymore since they finally solved all these problems and invented the Stack application.  At this point you really can just say "Fuck it, just install Stack". 
@@ -38,7 +51,7 @@ curl -sSL https://get.haskellstack.org/ | sh
 \end{verbatim}
 
 \paragraph{}
-If you're on a shitty operating system like Windows, you don't have access to tools that were invented in the last forty years like "pipe".  I guess it's just too advanced for Seattle. 
+If you're on a shitty operating system like Windows, you don't have access to tools that were invented in the last forty years like ``pipe".  I guess it's just too advanced for Seattle. 
 
 What you'll need to do is just go to the haskellstack.org website, and download the Windows installer. 
 

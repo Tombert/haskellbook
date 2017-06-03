@@ -1,18 +1,24 @@
-\contentsline {chapter}{\numberline {1}Getting Shit Installed}{5}
-\contentsline {section}{\numberline {1.1}Introduction}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {section}{\numberline {1.2}What the hell is Stack?}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {paragraph}{}{5}
-\contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {section}{\numberline {1.3}Installing Stack}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {section}{\numberline {1.4}Using Stack}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
+\contentsline {chapter}{\numberline {1}Getting Shit Installed}{1}
+\contentsline {section}{\numberline {1.1}Introduction}{1}
+\contentsline {paragraph}{}{1}
+\contentsline {subsection}{\numberline {1.1.1}GHC}{1}
+\contentsline {paragraph}{}{1}
+\contentsline {subsection}{\numberline {1.1.2}Bullshit about GHC}{1}
+\contentsline {paragraph}{}{1}
+\contentsline {paragraph}{}{2}
+\contentsline {section}{\numberline {1.2}The Shitty Old Way}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {section}{\numberline {1.3}What the hell is Stack?}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {section}{\numberline {1.4}Installing Stack}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{3}
+\contentsline {section}{\numberline {1.5}Using Stack}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {paragraph}{}{3}

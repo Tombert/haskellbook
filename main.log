@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  2 JUN 2017 04:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  3 JUN 2017 01:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,25 +6,66 @@ entering extended mode
 (./main.tex
 LaTeX2e <2017/01/01> patch level 3
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
-(/usr/share/texmf-dist/tex/latex/base/book.cls
-Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/share/texmf-dist/tex/latex/base/bk12.clo
-File: bk12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
-)
-\c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+(./wileysev.cls
+
+
+ Wiley Book Style, Design No.: SD 001C
+ and SD 004B
+ 
+ Written by Amy Hendrickson, TeXnology, Inc.
+ 
+ This version is dated Feb 16, 2011
+
+
+\phspace=\dimen102
+\SpaceAboveChapterNumber=\dimen103
+\savefootnotenumber=\count79
+\ftnum=\count80
+\saveftnum=\count81
+\c@chapapp=\count82
+\c@part=\count83
+\c@chapter=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\c@figure=\count90
+\c@table=\count91
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
-\bibindent=\dimen102
-)
-(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+\partskip=\skip43
+\tabandfigskip=\skip44
+\footnum=\count92
+\savefootnum=\count93
+\@indexfile=\write3
+\openout3 = `main.idx'.
+
+Writing index file main.idx
+\iletterskip=\skip45
+\timing=\count94
+\hourcount=\count95
+\oldtime=\count96
+\probcount=\count97
+\subprobcount=\count98
+\c@subproblem=\count99
+\c@subproblem=\count100
+\widthofcropmarks=\dimen104
+\raisetopcropmarks=\dimen105
+\raisebottomcropmarks=\dimen106
+\movecropmarksright=\dimen107
+\c@theorem=\count101
+\c@appfootnote=\count102
+\slugwidth=\dimen108
+\slugheight=\dimen109
+\slugdepth=\dimen110
+\c@exampnum=\count103
+\c@algo=\count104
+\c@algorithm=\count105
+\chapskip=\dimen111
+\chapheight=\dimen112
+\authorskip=\dimen113
+) (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
@@ -369,29 +410,29 @@ Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 (/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count88
+\Gread@gobject=\count106
 ))
-\Gin@req@height=\dimen103
-\Gin@req@width=\dimen104
+\Gin@req@height=\dimen114
+\Gin@req@width=\dimen115
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count89
+\lst@mode=\count107
 \lst@gtempboxa=\box26
 \lst@token=\toks17
-\lst@length=\count90
-\lst@currlwidth=\dimen105
-\lst@column=\count91
-\lst@pos=\count92
-\lst@lostspace=\dimen106
-\lst@width=\dimen107
-\lst@newlines=\count93
-\lst@lineno=\count94
-\lst@maxwidth=\dimen108
+\lst@length=\count108
+\lst@currlwidth=\dimen116
+\lst@column=\count109
+\lst@pos=\count110
+\lst@lostspace=\dimen117
+\lst@width=\dimen118
+\lst@newlines=\count111
+\lst@lineno=\count112
+\lst@maxwidth=\dimen119
 
 (/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count95
-\lst@skipnumbers=\count96
+\c@lstnumber=\count113
+\lst@skipnumbers=\count114
 \lst@framebox=\box27
 )
 (/usr/share/texmf-dist/tex/latex/listings/listings.cfg
@@ -402,31 +443,31 @@ Package: listings 2015/06/04 1.6 (Carsten Heinz)
 (./chapters/chapter1.aux))
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
-LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count97
-\scratchdimen=\dimen109
+\scratchcounter=\count115
+\scratchdimen=\dimen120
 \scratchbox=\box28
-\nofMPsegments=\count98
-\nofMParguments=\count99
+\nofMPsegments=\count116
+\nofMParguments=\count117
 \everyMPshowfont=\toks18
-\MPscratchCnt=\count100
-\MPscratchDim=\dimen110
-\MPnumerator=\count101
-\makeMPintoPDFobject=\count102
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen121
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks19
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
@@ -477,57 +518,75 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count103
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <14.4> on input line 13.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 13.
- [1
+\c@lstlisting=\count121
+
+Overfull \hbox (50.54558pt too wide) in paragraph at lines 13--13
+[]\titlefont LEARNING FUCK-ING HASKELL
+ []
+
+<wileylogo.pdf, id=1, 292.09125pt x 64.24pt>
+File: wileylogo.pdf Graphic file (type pdf)
+ <use wileylogo.pdf>
+Package pdftex.def Info: wileylogo.pdf used on input line 13.
+(pdftex.def)             Requested size: 122.85876pt x 27.0208pt.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./wileylogo.pdf>] [2
+
+] (./main.toc)
+\tf@toc=\write4
+\openout4 = `main.toc'.
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
-
-] (./main.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 2.
-)
-\tf@toc=\write3
-\openout3 = `main.toc'.
-
- [3]
+[3]
 \openout2 = `./chapters/chapter1.aux'.
 
-
-(./chapters/chapter1.tex [4
+ (./chapters/chapter1.tex [4
 
 
 ]
 Chapter 1.
-[5]) [6] (./main.aux (./chapters/chapter1.aux)) ) 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 1.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 18.
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 18.
+ [1]
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[2])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[3] (./main.aux (./chapters/chapter1.aux)) ) 
 Here is how much of TeX's memory you used:
- 3175 strings out of 493013
- 42720 string characters out of 6139318
- 105889 words of memory out of 5000000
- 6690 multiletter control sequences out of 15000+600000
- 9628 words of font info for 34 fonts, out of 8000000 for 9000
+ 3492 strings out of 493013
+ 46138 string characters out of 6139318
+ 119111 words of memory out of 5000000
+ 7003 multiletter control sequences out of 15000+600000
+ 14816 words of font info for 51 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,6n,32p,443b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/tombert/.texlive/texmf
--var/fonts/pk/ljfour/public/cm/cmtt12.600pk> </home/tombert/.texlive/texmf-var/
-fonts/pk/ljfour/public/cm/cmbx12.864pk> </home/tombert/.texlive/texmf-var/fonts
-/pk/ljfour/public/cm/cmsl12.600pk> </home/tombert/.texlive/texmf-var/fonts/pk/l
-jfour/public/cm/cmbx12.600pk> </home/tombert/.texlive/texmf-var/fonts/pk/ljfour
-/public/cm/cmbx12.1244pk> </usr/share/texmf-dist/fonts/pk/ljfour/public/cm/dpi6
-00/cmr12.pk> </home/tombert/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmr12.
-720pk> </home/tombert/.texlive/texmf-var/fonts/pk/ljfour/public/cm/cmr17.720pk>
-Output written on main.pdf (6 pages, 68480 bytes).
+ 40i,13n,32p,427b,325s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+ti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (7 pages, 963073 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+ 77 PDF objects out of 1000 (max. 8388607)
+ 49 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
