@@ -15,11 +15,26 @@ While GHC is what you need to to compile your Haskell program, it can be pretty 
 \paragraph{}
 There's also the fact that GHC is \textit{only} the compiler.  Handling dependencies, managing the project files, and handling information about the project itself. 
 
+\paragraph{}
+To make sure it's done correctly, you'll need to install either the Haskell Platform (the wrong way), or Stack (the much better way). 
+
+
 \section{The Shitty Old Way}
-Back in the day, the main way to get Haskell install
+\paragraph{}
+Back in the old days, back in my youth, the main way to get Haskell installed on your machine was to download and install the Haskell Platform. 
 
 \paragraph{}
-But there's not much point to doing that shit anymore since they finally solved all these problems and invented the Stack application.  At this point you really can just say "Fuck it, just install Stack". 
+The Haskell Platform includes GHC, Cabal, and a bunch of the most commonly used packages.  
+
+\subsection{What the fuck is Cabal?}
+\paragraph{}
+As mentioned before, GHC is \textit{just} a compiler.  I'm not saying that it's a bad thing, it's just limited in scope.  Cabal was the first real attempt to help manage projects.  
+
+\paragraph{}
+
+
+\paragraph{}
+But there's not much point to doing that shit anymore since they finally solved all these problems and invented the Stack application.  At this point you really can just say ``Fuck it, just install Stack". 
 
 \section{What the hell is Stack?}
 
@@ -53,6 +68,7 @@ curl -sSL https://get.haskellstack.org/ | sh
 \paragraph{}
 If you're on a shitty operating system like Windows, you don't have access to tools that were invented in the last forty years like ``pipe".  I guess it's just too advanced for Seattle. 
 
+\paragraph{}
 What you'll need to do is just go to the haskellstack.org website, and download the Windows installer. 
 
 \paragraph{}
