@@ -1,37 +1,30 @@
 \chapter{Getting Shit Installed}
 
 \section{Introduction}
-\paragraph{}
 The shit that's always the hardest fucking part of getting into a langauge is getting the compiler and tooling set up.  Well, no, that's a fucking lie, there are lots of parts that are probably harder, but by the time you get to them you're probably already committed to the language so there's no use in complaining. 
 
 \subsection{GHC}
-\paragraph{}
 The most important thing you'll need to do Haskell development is The Glorious Haskell Compiler, or GHC for short. There are other Haskell compilers out there, like YHC or UHC, but I don't know anyone that uses them, and I can't be bothered to try them out myself. When people say ``Haskell", they usually seem to mean ``GHC"
 
 \subsection{Bullshit about GHC}
-\paragraph{}
 While GHC is what you need to to compile your Haskell program, it can be pretty frustrating between different point versions, and especially irritating between different platforms.  For the love of God, do \textit{not} just install GHC from the command line in your favorite operating system's package manager, since this will almost certainly be wrong, and confuse you.  
 
-\paragraph{}
 There's also the fact that GHC is \textit{only} the compiler.  Handling dependencies, managing the project files, and handling information about the project itself. 
 
-\paragraph{}
 To make sure it's done correctly, you'll need to install either the Haskell Platform (the wrong way), or Stack (the much better way). 
 
 
 \section{The Shitty Old Way}
-\paragraph{}
 Back in the old days, back in my youth, the main way to get Haskell installed on your machine was to download and install the Haskell Platform. 
 
-\paragraph{}
-The Haskell Platform includes GHC, Cabal, and a bunch of the most commonly used packages.  
+The Haskell Platform includes GHC, Cabal, and a thirty-two of the most commonly used packages with GHC, and was the de-facto method of getting all of Haskell on your computer. 
 
 \subsection{What the fuck is Cabal?}
-\paragraph{}
-As mentioned before, GHC is \textit{just} a compiler.  I'm not saying that it's a bad thing, it's just limited in scope.  Cabal was the first real attempt to help manage projects
+As mentioned before, GHC is \textit{just} a compiler.  I'm not saying that it's a bad thing, it's just limited in scope.  Cabal was the first real attempt to for a utility to manage Haskell projects.  
+
+Cabal will give you a structure to your project, allowing you a means of creating your project without having to define any kind of makefiles or build scripts.  It will also handle library dependencies, including basic transitive dependency support (though it can get confused if your transitive dependencies have conflicting versions). 
 
 \subsubsection{Initializing the folder and sandbox}
-\paragraph{}
 To make a new project with Cabal, you should need to make a new folder, and initialize it as a Cabal project.  If you don't want projects to fuck each other up, you should utilize the Cabal Sandbox feature. 
 
 \begin{verbatim}
@@ -41,60 +34,53 @@ cabal sandbox init
 \end{verbatim}
 
 \subsubsection{Sandboxing}
-\paragraph{}
 Sanboxing, though not strictly required, makes your life a lot simpler. By default, Cabal will install libraries into the global space.  This is okay if you only have one project, but if you have multiple Haskell project, it's very easy to get dependency conflicts. 
 
 If you plan on having multiple Haskell projects, it's effectively a requirement to use a Sandbox, so as to minimize a bunch of dependency collisions, known by assholes like me as ``Cabal Hell".  
 
 \subsubsection{Initializing the Project}
-\paragraph{}
+
+Once you've initialized the project, you will need to run \inlinecode{cabal init} and go through the optoins. 
+
+\begin{verbatim}
+cabal init
+
+\end{verbatim}
 
 
-\paragraph{}
+
 But there's not much point to doing that shit anymore since they finally solved all these problems and invented the Stack application.  At this point you really can just say ``Fuck it, just install Stack". 
 
 \section{What the hell is Stack?}
 
-\paragraph{}
 Stack is a Haskell program by FPComplete to make it easier to make other Haskell programs.  
 
-\paragraph{}
 You'll actually find that to be a bit of a pattern in the Haskell universe.  It feels like half of all the programs for it are just there to make you feel cool because you're using a Haskell program, or to try to talk you into making more Haskell programs
 
-\paragraph{}
 Anyway, what exactly does Stack do?  In a nutshell: it manages your Haskell your entire Haskell project.  
 
-\paragraph{}
 Using Stack, you can have your dependencies, structure, compilation, and even your compiler.  In the process, you get something that man had previously only dreamed of: reproducible builds. 
 
-\paragraph{}
 This is new shit, since it used to be really fucking difficult to get different versions of GHC installed on the same machine, especially if you decided it would be a good idea to use a Linux package manager. 
 
 \section {Installing Stack}
 
-\paragraph{}
 Ok, enough rambling about this Stack shit, I'm getting tired of talking about it anyway.  
 
-\paragraph{}
 To go about installing it on a sane Mac or Linux platform, you should be able to do something to the effect of 
 
 \begin{verbatim}
 curl -sSL https://get.haskellstack.org/ | sh
 \end{verbatim}
 
-\paragraph{}
 If you're on a shitty operating system like Windows, you don't have access to tools that were invented in the last forty years like ``pipe".  I guess it's just too advanced for Seattle. 
 
-\paragraph{}
 What you'll need to do is just go to the haskellstack.org website, and download the Windows installer. 
 
-\paragraph{}
 By the time you read it, this has probably changed, so you'll have to look up the updated URL anyway.  I don't really know why I decided to use a printed medium to write a book about a fucking functional language that's hellbent on constantly updating. It's just going to get outdated.
 
 \section{Using Stack}
-\paragraph{}
 So now you should have stack installed, and all its glory is available to you.  Unless you installed it wrong.  Don't exclude that possibility, it will be your downfall.  
 
 
-\paragraph{}
 
