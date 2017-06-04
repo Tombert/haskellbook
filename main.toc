@@ -1,4 +1,15 @@
 \contentsline {schapter}{Foreword}{v}
+\contentsline {paragraph}{}{v}
+\contentsline {paragraph}{}{v}
+\contentsline {paragraph}{}{v}
+\contentsline {paragraph}{}{v}
+\contentsline {paragraph}{}{v}
+\contentsline {paragraph}{}{vi}
+\contentsline {paragraph}{}{vi}
+\contentsline {paragraph}{}{vi}
+\contentsline {paragraph}{}{vi}
+\contentsline {paragraph}{}{vi}
+\contentsline {paragraph}{}{vi}
 \contentsline {chapter}{\numberline {1}Getting Shit Installed}{1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}
 \contentsline {subsection}{\numberline {1.1.1}GHC}{1}
