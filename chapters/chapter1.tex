@@ -1,31 +1,75 @@
 \chapter{Getting Shit Installed}
 
 \section{Introduction}
-The shit that's always the hardest fucking part of getting into a langauge is getting the compiler and tooling set up.  Well, no, that's a fucking lie, there are lots of parts that are probably harder, but by the time you get to them you're probably already committed to the language so there's no use in complaining. 
+
+\paragraph{}
+It can be incredibly difficult to know where to even start when doing Haskell.  The documentation on the Haskell Wiki, while very good, is designed for a more academic audience than most of the more mainstream langauges. Challenges tend to arise when even knowing \textit{which} compiler to install, let alone how to go about structuring things or installing libraries.  
+
+\paragraph{}
+This probably why often the biggest hurdle to cross when getting started with a new programming language is simply getting the compiler, platform tools, and editor set up for beginning your development, if for no other reason than the fact that the territory is still entirely new and it can be difficult to know when you did something incorrectly.  
+
+\paragraph{}
+Until very recently, Haskell has been an especially difficult platform to work because of its ambiguous ways of setting everything up, especially on Windows. Different versions of different point releases of Haskell compilers crowd their way through the package managers, making code more challenging to port between systems than it had any right to be. 
+
+\paragraph{}
+Before getting too far into how to go about installing things, we should define some key terms that will be used frequently throughout the book. 
+
 
 \subsection{GHC}
-The most important thing you'll need to do Haskell development is The Glorious Haskell Compiler, or GHC for short. There are other Haskell compilers out there, like YHC or UHC, but I don't know anyone that uses them, and I can't be bothered to try them out myself. When people say ``Haskell", they usually seem to mean ``GHC"
+The Glorious Haskell Compiler, or GHC for short, is the \textit{de facto} standard compiler for doing Haskell work.  It has been in development since the late eighties, and is usually what people mean when they say "Haskell".  It survives out of user contributions and from funding from Microsoft Research, and is generally the first Haskell compiler to get new features (although they tend to be hidden away in compiler extensions) 
 
-\subsection{Bullshit about GHC}
-While GHC is what you need to to compile your Haskell program, it can be pretty frustrating between different point versions, and especially irritating between different platforms.  For the love of God, do \textit{not} just install GHC from the command line in your favorite operating system's package manager, since this will almost certainly be wrong, and confuse you.  
+\subsubsection{Some Notes About GHC} 
+There is an old saying about Haskehl by Simon Peyton Jones: "Avoid Success At All Cost".  The meaning of this statement was to imply that Haskell should remain free as a platform for new ideas and doing things the ``right" way, and not cave to the pressures of industry demands. 
 
-There's also the fact that GHC is \textit{only} the compiler.  Handling dependencies, managing the project files, and handling information about the project itself. 
+This is all well and good, but it also means that the developers of GHC can and will often introduce new features and rules for the language as often as they want, which can lead to breaking changes between differing versions of GHC, sometimes even for point-releases. 
 
-To make sure it's done correctly, you'll need to install either the Haskell Platform (the wrong way), or Stack (the much better way). 
+Several tools, such as Stack, have done a lot of great work to minimize the damage that these changes can cause, and it should be noted that the later versions of GHC have been doing much better at avoiding huge breaking changes, but it is something you have to be aware of. 
 
 
-\section{The Shitty Old Way}
-Back in the old days, back in my youth, the main way to get Haskell installed on your machine was to download and install the Haskell Platform. 
+\subsection{Cabal and Stack}
+While GHC does a good job at compiling your Haskell programs, it doesn't dictate how to structure the project or handle library dependencies. GHC is exactly what its name states: a compiler. 
 
-The Haskell Platform includes GHC, Cabal, and a thirty-two of the most commonly used packages with GHC, and was the de-facto method of getting all of Haskell on your computer. 
+Like many modern languages, most Haskell developers eschew the use of Makefiles and build scripts, instead utilizing a folder structure and config file.  
 
-\subsection{What the fuck is Cabal?}
-As mentioned before, GHC is \textit{just} a compiler.  I'm not saying that it's a bad thing, it's just limited in scope.  Cabal was the first real attempt to for a utility to manage Haskell projects.  
+Cabal was the first major system to allow such a style for Haskell, and remains a popular tool today for such reasons.  Cabal gives you a structure for building your projects, gives you simple commands like \inlinecode{cabal build} and \inlinecode{cabal repl}, giving you a simple-to-read project file for handling dependencies from Hackage (the standard repository for Haskell libraries), basic sandboxing, compiler extensions, and build parameters. 
 
-Cabal will give you a structure to your project, allowing you a means of creating your project without having to define any kind of makefiles or build scripts.  It will also handle library dependencies, including basic transitive dependency support (though it can get confused if your transitive dependencies have conflicting versions). 
+However, Cabal does nothing to address the fragmentation of GHC that was mentioned earlier.  Cabal's installation is predicated on the notion that you already have a functioning GHC installed, and even installing Cabal itself can lead to some incompatibility between versions. This, compounded with the almost complete lack of management of transitive dependencies has lead to something people in the Haskell trade have labeled ``Cabal Hell", and has been the bane of nearly every veteran the language has. It was not and still is not difficult to find people on Hacker News and Reddit complain about how they gave up on Haskell due to problems with getting Cabal to work. 
 
-\subsubsection{Initializing the folder and sandbox}
-To make a new project with Cabal, you should need to make a new folder, and initialize it as a Cabal project.  If you don't want projects to fuck each other up, you should utilize the Cabal Sandbox feature. 
+In 2015, the people at FP Complete addressed this problem with their new build platform: Stack.  Stack still used Cabal for things like dependency management behind the scenees, but gave Haskell a feature it had never had before: reproducible builds. 
+
+Stack allows the user declare which version of GHC they want to use for their project, on a per-project basis, and even allows them to declare it in the ``shebang" at the beginning of scripts.  Like Cabal, it gives a structure to your project, gives you access to commands like \inlinecode{stack build} and \inlinecode{stack ghci}, which will generally ``just work" on your machine. 
+
+They also built an alternative repository called "Stackage", which, while similar to Hackage, audits packages to greatly reduce the likelihood of a transitive dependency conflicts, almost (but not completely) eliminating the potential for Cabal Hell. 
+
+\subsubsection{A note about operating-system package managers}
+I should also make this point abundantly and overwhelmingly clear: do \textit{not} install GHC through your operating system's package manager like \inlinecode{apt}, \inlinecode{pacman} or \inlinecode{brew}. The versions of GHC included in these repositories tend to be incredibly out of date, and are installed system-wide, thus making it difficult to install differing versions of GHC or Cabal for different project. 
+
+It is best to ignore your system package manager when working with Haskell, and utilize a tool like Stack instead.  This will save you a lot of time avoiding arguments with Cabal. 
+%Since it's entirely possible that you may be stuck maintaining a bit of legacy codebase, I feel it is prudent to go about how to install Haskell correctly in the old
+
+
+
+%\subsection{Bullshit about GHC}
+%While GHC is what you need to to compile your Haskell program, it can be pretty frustrating between different point versions, and especially irritating between different platforms.  For the love of God, do \textit{not} just install GHC from the command line in your favorite operating system's package manager, since this will almost certainly be wrong, and confuse you.  
+%
+%There's also the fact that GHC is \textit{only} the compiler.  Handling dependencies, managing the project files, and handling information about the project itself. 
+%
+%To make sure it's done correctly, you'll need to install either the Haskell Platform (the wrong way), or Stack (the much better way). 
+
+
+\section{Getting Your Environment Set Up}
+
+While Stack has largely supplanted any previous systems that were used for Haskell development, there is a still a chance that if you're reading this, you will be looking at an older, legacy project that hasn't adapted to it yet. 
+
+So, although we will be using Stack throughout most of this book, I feel obliged to at least mention how to get started with the older, Cabal-only approach; I implore you to explore Stack unless you're under explicit order to do it with Cabal.
+
+With that being said, let us take a look at using Cabal. 
+
+\subsection{Getting Set Up with Cabal}
+
+The first thing you will want to do when using Cabal is to make sure that you have downloaded the latest version of the Haskell Platform from \inlinecode{https://www.haskell.org/platform/}.  This should guarantee an up-to-date version of Cabal is installed on your system, thus ensuring the best compatibility possible. 
+
+Once the Haskell Platform is installed, you should have ghc installed on your system, so let us begin the process of setting up a new project: 
 
 \begin{verbatim}
 mkdir my_new_project
@@ -33,53 +77,75 @@ cd my_new_project
 cabal sandbox init
 \end{verbatim}
 
-\subsubsection{Sandboxing}
-Sanboxing, though not strictly required, makes your life a lot simpler. By default, Cabal will install libraries into the global space.  This is okay if you only have one project, but if you have multiple Haskell project, it's very easy to get dependency conflicts. 
+The first two lines should be fairly self explanitory, but \inlinecode{cabal sandbox init} might be a bit confusing. 
 
-If you plan on having multiple Haskell projects, it's effectively a requirement to use a Sandbox, so as to minimize a bunch of dependency collisions, known by assholes like me as ``Cabal Hell".  
+While it's not \textit{strictly} required, sandboxing will greatly simplify your time using Cabal.  If you do not use a sandbox, dependencies get installed into the global space of your machine, instead of being contained to your project.  This might not be an issue if you only have one project, or your projects are each contained separate virtual machines or containers, but it can be a tremendous nuisance when working with multiple projects on the same machine, which may be required depending on your workflow. 
 
-\subsubsection{Initializing the Project}
-
-Once you've initialized the project, you will need to run \inlinecode{cabal init} and go through the optoins. 
+\paragraph{}
+Once your sandbox is created, you will want to run \inlinecode{cabal init}
 
 \begin{verbatim}
-cabal init
+tombert@hostname:~/my_new_project# cabal sandbox init
+
+Config file path source is default config file.
+Config file /root/.cabal/config not found.
+Writing default configuration to /root/.cabal/config 
+Writing a default package environment file to
+/root/my_new_project/cabal.sandbox.config
+Creating a new sandbox at /root/my_new_project/.cabal-sandbox
+root@6a2da51caa38:~/my_new_project# cabal init
+Package name? [default: my-new-project] my_new_project 
+Couldn't parse my_new_project, please try again!
+Package name? [default: my-new-project]
+Package version? [default: 0.1.0.0] 
+Please choose a license:
+ * 1) (none)        
+   2) GPL-2
+   3) GPL-3
+   4) LGPL-2.1
+   5) LGPL-3
+   6) AGPL-3
+   7) BSD2
+   8) BSD3
+   9) MIT
+  10) ISC
+  11) MPL-2.0
+  12) Apache-2.0
+  13) PublicDomain
+  14) AllRightsReserved
+  15) Other (specify)
+Your choice? [default: (none)]
+Author name? Thomas Gebert
+Maintainer email? thomas@gebert.sexy
+Project homepage URL?
+Project synopsis? A test project for everyone to enjoy
 
 \end{verbatim}
 
-
+Generally, the defaults are fine for most projects, though you should pay special attention to the Haskell version (2010 or 98), as this can greatly influence what the language allows you to do.  You also should pay attention to the location where the code exists (\inlinecode{src} in this case) and the name of the ``main.hs" file. 
 
 But there's not much point to doing that shit anymore since they finally solved all these problems and invented the Stack application.  At this point you really can just say ``Fuck it, just install Stack". 
 
-\section{What the hell is Stack?}
+As previously stated, there is not much reason now to run vanilla Cabal.  It's not useless or horrible, and it's possible that if you need to work with an older project you will be forced to use it. 
 
-Stack is a Haskell program by FPComplete to make it easier to make other Haskell programs.  
+For new projects though, we will want to use Stack.
 
-You'll actually find that to be a bit of a pattern in the Haskell universe.  It feels like half of all the programs for it are just there to make you feel cool because you're using a Haskell program, or to try to talk you into making more Haskell programs
+\subsection{Getting Started with Stack}
 
-Anyway, what exactly does Stack do?  In a nutshell: it manages your Haskell your entire Haskell project.  
-
-Using Stack, you can have your dependencies, structure, compilation, and even your compiler.  In the process, you get something that man had previously only dreamed of: reproducible builds. 
-
-This is new shit, since it used to be really fucking difficult to get different versions of GHC installed on the same machine, especially if you decided it would be a good idea to use a Linux package manager. 
-
-\section {Installing Stack}
-
-Ok, enough rambling about this Stack shit, I'm getting tired of talking about it anyway.  
-
-To go about installing it on a sane Mac or Linux platform, you should be able to do something to the effect of 
+FPComplete's Stack is relatively easy to install.  If you're on a Unix or Linux machine, installation is a fairly straightforward process of pasting a command into your terminal: 
 
 \begin{verbatim}
 curl -sSL https://get.haskellstack.org/ | sh
 \end{verbatim}
 
-If you're on a shitty operating system like Windows, you don't have access to tools that were invented in the last forty years like ``pipe".  I guess it's just too advanced for Seattle. 
+\subsubsection{Installation on Windows}
+If you're on Windows, then first consider using a Linux installation in a free virtual machine or in a separate Linux server first.  GHC tends to be a little out of date on Windows, and is usually at least one version behind. However, if your plan is to build a Windows program, you will be forced to use the Windows version of Stack. 
 
-What you'll need to do is just go to the haskellstack.org website, and download the Windows installer. 
+The installation on Windows isn't terribly hard, and involves a standard ``next-next-next-finish" style of installer. 
 
-By the time you read it, this has probably changed, so you'll have to look up the updated URL anyway.  I don't really know why I decided to use a printed medium to write a book about a fucking functional language that's hellbent on constantly updating. It's just going to get outdated.
+It should be noted that this book is going to assume that the user is using a Unix or Unix-Like environment, since the theme of this book is about network programming. 
 
-\section{Using Stack}
+\subsection{Using Stack}
 So now you should have stack installed, and all its glory is available to you.  Unless you installed it wrong.  Don't exclude that possibility, it will be your downfall.  
 
 

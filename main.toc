@@ -12,13 +12,17 @@
 \contentsline {paragraph}{}{vi}
 \contentsline {chapter}{\numberline {1}Getting Shit Installed}{1}
 \contentsline {section}{\numberline {1.1}Introduction}{1}
-\contentsline {subsection}{\numberline {1.1.1}GHC}{1}
-\contentsline {subsection}{\numberline {1.1.2}Bullshit about GHC}{1}
-\contentsline {section}{\numberline {1.2}The Shitty Old Way}{2}
-\contentsline {subsection}{\numberline {1.2.1}What the fuck is Cabal?}{2}
-\contentsline {subsubsection}{\numberline {1.2.1.1}Initializing the folder and sandbox}{2}
-\contentsline {subsubsection}{\numberline {1.2.1.2}Sandboxing}{2}
-\contentsline {subsubsection}{\numberline {1.2.1.3}Initializing the Project}{2}
-\contentsline {section}{\numberline {1.3}What the hell is Stack?}{3}
-\contentsline {section}{\numberline {1.4}Installing Stack}{3}
-\contentsline {section}{\numberline {1.5}Using Stack}{3}
+\contentsline {paragraph}{}{1}
+\contentsline {paragraph}{}{1}
+\contentsline {paragraph}{}{1}
+\contentsline {paragraph}{}{1}
+\contentsline {subsection}{\numberline {1.1.1}GHC}{2}
+\contentsline {subsubsection}{\numberline {1.1.1.1}Some Notes About GHC}{2}
+\contentsline {subsection}{\numberline {1.1.2}Cabal and Stack}{2}
+\contentsline {subsubsection}{\numberline {1.1.2.1}A note about operating-system package managers}{3}
+\contentsline {section}{\numberline {1.2}Getting Your Environment Set Up}{3}
+\contentsline {subsection}{\numberline {1.2.1}Getting Set Up with Cabal}{3}
+\contentsline {paragraph}{}{4}
+\contentsline {subsection}{\numberline {1.2.2}Getting Started with Stack}{5}
+\contentsline {subsubsection}{\numberline {1.2.2.1}Installation on Windows}{5}
+\contentsline {subsection}{\numberline {1.2.3}Using Stack}{5}
