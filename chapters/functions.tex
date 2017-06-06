@@ -1,4 +1,17 @@
 \chapter{Functions}
-We should start Haskell with most obvious thing in Functional Programming but arguably the most different from traditional programming: functions. 
 
-Functions, in the mathematical sense, are predictable units of work.  
+Let me get the shocking truth out right away: most languages don't have functions.  
+
+Of course, nearly every language has a concept of a ``function", and might have a keyword designated for it, but, in a mathematical sense, they don't follow the major properties of functions.  
+
+For example, in mathematics you may be familiar with the ``vertical line test" for checking whether a graph could represent a function. This simple procedure exists to show that for any single input value $ x $, in the function $f\left(x\right)$, you will always get the same value out.  
+
+For example, let's look at the function $ f\left( x \right) = x ^ 2 $. If I supply the value $ 10 $ for $ x $, The result will \textit{always} be $ 100 $, no matter how many times I run it.  It will be $ 100 $ whether or not a certain file exists on a hard drive. It will be $100$ even if all of Google's servers break down.  It will be $100$ for always and forever simply because that is a property of functions. 
+
+Now, let's think about the JavaScript function \inlinecode{Date.now()}.  It superficially looks like a function, and returns a value.  Most of the documentation calls it a function, and in the way most programmers think of it, it might be considered a function in some kind of abstract sense. 
+
+But \inlinecode{Date.now()} doesn't pass the vertical line test. \inlinecode{Date.now()} takes no arguments, but returns a different result upon every execution.  \inlinecode{Date.now()} is dependent on the computer's system clock, which is likely dependent on a service like NTP or \inlinecode{time.nist.gov}. 
+
+In functional programming, we distinguish between predictable, mathematical functions and ones dependent on external factors as \textit{pure} and \textit{impure}.  Purity is something that Haskell prides itself on, and is an important factor in making optimizing laziness (which we'll get to later). 
+
+

@@ -2,7 +2,7 @@
 
 
 \paragraph{}
-It can be incredibly difficult to know where to even start when doing Haskell.  The documentation on the Haskell Wiki, while very good, is designed for a more academic audience than most of the more mainstream langauges. Challenges tend to arise when even knowing \textit{which} compiler to install, let alone how to go about structuring things or installing libraries.  
+It can be incredibly difficult to know where to even start when doing Haskell.  The documentation on the Haskell Wiki, while very good, is designed for a more academic audience than most of the more mainstream langauges. Challenges tend to arise trying to figure out \textit{which} compiler to install, let alone how to go about structuring things or installing libraries.  
 
 \paragraph{}
 This probably why often the biggest hurdle to cross when getting started with a new programming language is simply getting the compiler, platform tools, and editor set up for beginning your development, if for no other reason than the fact that the territory is still entirely new and it can be difficult to know when you did something incorrectly.  
@@ -15,10 +15,10 @@ Before getting too far into how to go about installing things, we should define 
 
 
 \subsection{GHC}
-The Glorious Haskell Compiler, or GHC for short, is the \textit{de facto} standard compiler for doing Haskell work.  It has been in development since the late eighties, and is usually what people mean when they say "Haskell".  It survives out of user contributions and from funding from Microsoft Research, and is generally the first Haskell compiler to get new features (although they tend to be hidden away in compiler extensions) 
+The Glorious Haskell Compiler, or GHC for short, is the \textit{de facto} standard compiler for doing Haskell work.  It has been in development since the late eighties, and is usually what people mean when they say ``Haskell".  It survives by the contributions of dedicated enthusiasts and from funding from Microsoft Research, and is generally the first Haskell compiler to get new features (although they tend to be hidden away in compiler extensions). 
 
 \subsubsection{Some Notes About GHC} 
-There is an old saying about Haskehl by Simon Peyton Jones: "Avoid Success At All Cost".  The meaning of this statement was to imply that Haskell should remain free as a platform for new ideas and doing things the ``right" way, and not cave to the pressures of industry demands. 
+There is an old saying about Haskell by Simon Peyton Jones: ``Avoid Success At All Cost".  The meaning of this statement was to imply that Haskell should remain free as a platform for new ideas and doing things the ``right" way, and not cave to the pressures of industry demands. 
 
 This is all well and good, but it also means that the developers of GHC can and will often introduce new features and rules for the language as often as they want, which can lead to breaking changes between differing versions of GHC, sometimes even for point-releases. 
 
@@ -38,7 +38,7 @@ In 2015, the people at FP Complete addressed this problem with their new build p
 
 Stack allows the user declare which version of GHC they want to use for their project, on a per-project basis, and even allows them to declare it in the ``shebang" at the beginning of scripts.  Like Cabal, it gives a structure to your project, gives you access to commands like \inlinecode{stack build} and \inlinecode{stack ghci}, which will generally ``just work" on your machine. 
 
-They also built an alternative repository called "Stackage", which, while similar to Hackage, audits packages to greatly reduce the likelihood of a transitive dependency conflicts, almost (but not completely) eliminating the potential for Cabal Hell. 
+They also built an alternative repository called ``Stackage", which, while similar to Hackage, audits packages to greatly reduce the likelihood of a transitive dependency conflicts, almost (but not completely) eliminating the potential for Cabal Hell. 
 
 \subsubsection{A note about operating-system package managers}
 I should also make this point abundantly and overwhelmingly clear: do \textit{not} install GHC through your operating system's package manager like \inlinecode{apt}, \inlinecode{pacman} or \inlinecode{brew}. The versions of GHC included in these repositories tend to be incredibly out of date, and are installed system-wide, thus making it difficult to install differing versions of GHC or Cabal for different project. 
@@ -136,14 +136,21 @@ curl -sSL https://get.haskellstack.org/ | sh
 \end{verbatim}
 
 \subsubsection{Installation on Windows}
-If you're on Windows, then first consider using a Linux installation in a free virtual machine or in a separate Linux server first.  GHC tends to be a little out of date on Windows, and is usually at least one version behind. However, if your plan is to build a Windows program, you will be forced to use the Windows version of Stack. 
+If you're on Windows, first consider using a Linux installation in a virtual machine or in a Linux server first.  GHC tends to be a little out of date on Windows, and is usually at least one version behind. Of course, if you plan on building a Windows program, you will be forced to use the Windows version of Stack. 
 
 The installation on Windows isn't terribly hard, and involves a standard ``next-next-next-finish" style of installer. 
 
-It should be noted that this book is going to assume that the user is using a Unix or Unix-Like environment, since the theme of this book is about network programming. 
+It should be noted that this book is going to assume that the user is using a Unix or Unix-Like environment, since the theme of this book is about network programming.  While there are countless network programs written for Windows, Linux and other Unix-Like systems have become the clear-winner in the server space, and. 
 
 
 \subsection{Using Stack}
 
-Stack com
+Starting a project with Stack is pretty simple. Open up a terminal and type: 
 
+\begin{verbatim}
+stack new testproject
+cd testproject
+stack setup
+\end{verbatim}
+
+You might notice that there is a \inlinecode{testproject.cabal} file in this folder.  This is because Stack uses Cabal behind the scenes for dependency management. 
