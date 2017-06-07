@@ -5,10 +5,10 @@
 It can be incredibly difficult to know where to even start when doing Haskell.  The documentation on the Haskell Wiki, while very good, is designed for a more academic audience than most of the more mainstream langauges. Challenges tend to arise trying to figure out \textit{which} compiler to install, let alone how to go about structuring things or installing libraries.  
 
 \paragraph{}
-This probably why often the biggest hurdle to cross when getting started with a new programming language is simply getting the compiler, platform tools, and editor set up for beginning your development, if for no other reason than the fact that the territory is still entirely new and it can be difficult to know when you did something incorrectly.  
+This is probably why often the biggest hurdle to cross when getting started with a new programming language is simply getting the compiler, platform tools, and editor set up for beginning your development, if for no other reason than the fact that the territory is still entirely new and it can be difficult to know when you did something incorrectly.  
 
 \paragraph{}
-Until very recently, Haskell has been an especially difficult platform to work because of its ambiguous ways of setting everything up, especially on Windows. Different versions of different point releases of Haskell compilers crowd their way through the package managers, making code more challenging to port between systems than it had any right to be. 
+Until very recently (at least as of this writing), Haskell has been an especially difficult platform to work because of its ambiguous ways of setting everything up, especially on Windows. Different versions of different point releases of Haskell compilers crowd their way through the package managers, making code more challenging to port between systems than it had any right to be. 
 
 \paragraph{}
 Before getting too far into how to go about installing things, we should define some key terms that will be used frequently throughout the book. 
@@ -132,7 +132,7 @@ For new projects though, we will want to use Stack.
 FPComplete's Stack is relatively easy to install.  If you're on a Unix or Linux machine, installation is a fairly straightforward process of pasting a command into your terminal: 
 
 \begin{verbatim}
-curl -sSL https://get.haskellstack.org/ | sh
+tombert@hostname: curl -sSL https://get.haskellstack.org/ | sh
 \end{verbatim}
 
 \subsubsection{Installation on Windows}
@@ -148,9 +148,75 @@ It should be noted that this book is going to assume that the user is using a Un
 Starting a project with Stack is pretty simple. Open up a terminal and type: 
 
 \begin{verbatim}
-stack new testproject
-cd testproject
-stack setup
+tombert@hostname: stack new testproject
+tombert@hostname: cd testproject
+tombert@hostname: stack setup
 \end{verbatim}
 
 You might notice that there is a \inlinecode{testproject.cabal} file in this folder.  This is because Stack uses Cabal behind the scenes for dependency management. 
+
+\section{Choosing an Editor}
+
+There exists a bit of religiousity in every programmer with text editors.  People used to languages like Java or C\# tend to prefer editors with a lot of features, such as IntelliJ or Visual Studio.  Engineers who work in the weeds with C or C++ seem to tend gravitate a bit more towards a command-line interface utilizing Vim or Emacs.  
+
+For the former group, there now exists a couple of integrated environments that should be right up your alley. 
+
+As for the latter camp, both Vim and Emacs have basic syntax-highlighting for Haskell out of the box, and that may be enough for you depending on your concerns.  All the examples in this book are going to be built using the command-line, so it shouldn't be very difficult to adjust. 
+
+FPComplete has also built an editor backend called ``Intero", which Vim and Emacs both have plugins to hook into.  Intero allows you to get type information about variables and generate type signatures for functions. 
+
+Personally, I tend to prefer using the command-line editor called "NeoVim" (a fork of Vim), with no integrations outside of syntax highlighting. I use a terminal multiplexer called \inlinecode{tmux} to split my terminal in half so that I can have my editor on the top and a terminal on the bottom, and which allows me to quickly switch between a command line and an editor on the fly.  
+
+Whatever editor you choose, a pattern you will want to get into in Haskell is running things and experimenting in the interactive interpreter, known as \inlinecode{ghci} (accessible from \inlinecode{stack ghci} or \inlinecode{cabal repl}). Doing a full-on compilation of a Haskell program can take quite a long time, especially when your programs start getting big.  As a result, it can be immensely useful, when you're just experimenting and making sure your logic and types are correct, to avoid the compilation just for testing. 
+
+\section{Hello World}
+
+In the time-honored tradition of nearly every programming book on the planet, let us write a simple program that writes ``Hello World" to the screen.  Asumming you generated your project with Stack (as shown in the example above), let's build and run the generated code to see what it gives us out of the box:  
+
+\begin{verbatim}
+tombert@hostname: stack build
+tombert@hostname: stack exec testproject-exe
+someFunc 
+\end{verbatim}
+
+This generated stub appears to be an almost completely useless program; all it seems to do is simply print out the phrase \inlinecode{someFunc} to the screen. 
+
+We need to figure out what text we need to change to make our program say the standard ``Hello world", so navigate to the \inlinecode{app/Main.hs} file in your favorite editor. You should see something like the following: 
+
+\begin{verbatim}
+module Main where
+
+import Lib
+
+main :: IO ()
+main = someFunc
+\end{verbatim}
+
+Don't worry if you don't understand everything that's happening here; you have the entire book to learn that.  Right now, all we need to understand is the \inlinecode{main}, like in most programming languages, is the entry-point to your application. 
+
+It appears to be that \inlinecode{main} is defined to be equal to \inlinecode{someFunc}.  While it's not actually how the compiler works, it can be be useful to think of function declarations like this as a ``copy"  of the function on the right. 
+
+To find the definition of \inlinecode{someFunc}, let's point our editor over to the file \inlinecode{src/Lib.hs}.  We should see something like this: 
+
+\begin{verbatim}
+
+module Lib
+    ( someFunc
+    ) where
+
+someFunc :: IO ()
+someFunc = putStrLn "someFunc"
+
+\end{verbatim}
+
+It looks like \inlinecode{someFunc} is defined as \inlinecode{putStrLn "someFunc"}.  This explains why the only thing logging to the console was \inlinecode{someFunc}.  
+
+Change the text in the string to \inlinecode{"Hello World"}, save the file, and build the program like we did above.  
+
+\begin{verbatim}
+tombert@hostname: stack build
+tombert@hostname: stack exec testproject-exe
+Hello WOrld
+\end{verbatim}
+
+Congratulations, you are now a Haskell programmer.  

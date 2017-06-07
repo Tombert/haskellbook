@@ -1,5 +1,5 @@
 \chapter{Functions}
-
+\section{What is a function?}
 Let me get the shocking truth out right away: most languages don't have functions.  
 
 Of course, nearly every language has a concept of a ``function", and might have a keyword designated for it, but, in a mathematical sense, they don't follow the major properties of functions.  
@@ -15,6 +15,7 @@ If I supply the value $ 10 $ for $ x $, The result will \textit{always} be $ 100
 Now, let's think about the JavaScript function \inlinecode{Date.now()}.  It superficially looks like a function, and returns a value.  Most of the documentation calls it a function, and in the way most programmers think of it, it might be considered a function in some kind of abstract sense. 
 
 But \inlinecode{Date.now()} doesn't pass the vertical line test. \inlinecode{Date.now()} takes no arguments, but returns a different result upon every execution.  \inlinecode{Date.now()} is dependent on the computer's system clock, which is likely dependent on a service like NTP or \inlinecode{time.nist.gov}. 
+
 
 In functional programming, we distinguish between predictable, mathematical functions and functions dependent on external factors as \textit{pure} and \textit{impure}.  
 

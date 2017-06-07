@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  5 JUN 2017 23:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  6 JUN 2017 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -588,35 +588,52 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[4])
+[4]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
 [5]
+Overfull \hbox (9.58295pt too wide) in paragraph at lines 199--200
+[]\tocfonts To find the def-i-ni-tion of \OT1/cmtt/m/n/10 someFunc\tocfonts , l
+et's point our ed-i-tor over to the file \OT1/cmtt/m/n/10 src/Lib.hs\tocfonts .
+
+ []
+
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[6])
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+ []
+
+[7]
 \openout2 = `./chapters/functions.aux'.
 
- (./chapters/functions.tex [6
+ (./chapters/functions.tex [8
 
 
 
 ]
 Chapter 2.
-[7])
+[9])
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[8] (./main.aux (./chapters/foreword.aux) (./chapters/installation.aux)
+[10] (./main.aux (./chapters/foreword.aux) (./chapters/installation.aux)
 (./chapters/functions.aux)) ) 
 Here is how much of TeX's memory you used:
  3480 strings out of 493013
  46081 string characters out of 6139318
- 120686 words of memory out of 5000000
+ 120687 words of memory out of 5000000
  6984 multiletter control sequences out of 15000+600000
  13954 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,9n,32p,718b,247s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,8n,32p,718b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 ></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
@@ -627,10 +644,10 @@ onts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx
 share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmtt10.pfb>
-Output written on main.pdf (14 pages, 157527 bytes).
+Output written on main.pdf (16 pages, 165752 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
