@@ -32,7 +32,7 @@ Functions in Haskell tend to be fairly close to what you do in math. For example
 f x = x * x
 \end{verbatim}
 
-Let's break each part down. 
+Let's break each part down: 
 
 \begin{itemize}
 \item \inlinecode{f} is the name of the function.  
@@ -40,4 +40,33 @@ Let's break each part down.
 \item The \inlinecode{x * x} is the function body. Haskell is expression-based, not statement-based, so there is no need to explicitly call \inlinecode{return}
 \end {itemize}
 
+Haskell is a statically typed language, so you might be wondering where there isn't any type declaration.  
+To understand why, open up a GHCI REPL by typing \inlinecode{stack ghci}. Type \inlinecode{f x = x * x} into the shell. Then type \inlinecode{:t f}. You should get the following output:
 
+\begin{verbatim}
+f :: Num a => a -> a
+\end{verbatim}
+
+We will go into more detail about the specifics when we get to our chapter on Typeclasses, but what this type signature says is allow any type \inlinecode{a} that is a number. The \inlinecode{Num} is effectively a constraint that only allows numbers to be sent into the function, and this can all be deduced at compile-time, by inferring it out of the arguments demanded from the \inlinecode{*}. 
+
+\subsection{Generic Types}
+This type of generic programming should be familiar to anyone who has ever done anything with Java Generics or C++ templates. 
+
+While this kind of programming can be kind of cumbersome in imperative languages, it's largely automatic and simple in Haskell.  Most of the time, the types can be deduced automatically, and GHC is very good about making the functions as generic as possible.  
+
+As a result, it's easy to make your Haskell programs incredibly modular and reusable, and you'll find that most of the time, your functions can have many uses.  
+
+\section{Types}
+Of course, sometimes you will need concrete types in your program.  
+
+Types in Haskell are designated as beginning with a capital letter, and the standard bunch of types you've seen in most other languages are included: 
+
+\begin{itemize}
+\item \inlinecode{Double} - A double-precision floating-point number. 
+\item \inlinecode{Int} - A 32-bit integer. 
+\item \inlinecode{Integer} - An arbitrary-precision integer.  There is no risk of overflow, but these tend to perform worse than \inlinecode{Int}. 
+\item \inlinecode{Char} - A single Unicode Character. 
+\item \inlinecode{String} - A list of Characters. \begin{itemize}
+            \item Strings are a bit controversial in Haskell.  We will have a whole section on them in a later chapter. 
+	\end{itemize}
+\end{itemize}
