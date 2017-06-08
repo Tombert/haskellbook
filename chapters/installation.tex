@@ -159,15 +159,15 @@ You might notice that there is a \inlinecode{testproject.cabal} file in this fol
 
 There exists a bit of religiousity in every programmer with text editors.  People used to languages like Java or C\# tend to prefer editors with a lot of features, such as IntelliJ or Visual Studio.  Engineers who work in the weeds with C or C++ seem to tend gravitate a bit more towards a command-line interface utilizing Vim or Emacs.  
 
-For the former group, there now exists a couple of integrated environments that should be right up your alley. 
+For the former group, there now exists a couple of integrated environments that should be right up your alley. FPComplete has a Web-based editor that utilizes the excellent Docker platform to give handle project generation and testing. The editor has many of the bells and whistles that people like about Eclipse or IntelliJ. 
 
-As for the latter camp, both Vim and Emacs have basic syntax-highlighting for Haskell out of the box, and that may be enough for you depending on your concerns.  All the examples in this book are going to be built using the command-line, so it shouldn't be very difficult to adjust. 
+As for the more minimalist groups, both Vim and Emacs have basic syntax-highlighting for Haskell out of the box, and that may be enough for you depending on your concerns.  All the examples in this book are going to be built using the command-line, so it shouldn't be very difficult to adjust. 
 
 FPComplete has also built an editor backend called ``Intero", which Vim and Emacs both have plugins to hook into.  Intero allows you to get type information about variables and generate type signatures for functions. 
 
 Personally, I tend to prefer using the command-line editor called "NeoVim" (a fork of Vim), with no integrations outside of syntax highlighting. I use a terminal multiplexer called \inlinecode{tmux} to split my terminal in half so that I can have my editor on the top and a terminal on the bottom, and which allows me to quickly switch between a command line and an editor on the fly.  
 
-Whatever editor you choose, a pattern you will want to get into in Haskell is running things and experimenting in the interactive interpreter, known as \inlinecode{ghci} (accessible from \inlinecode{stack ghci} or \inlinecode{cabal repl}). Doing a full-on compilation of a Haskell program can take quite a long time, especially when your programs start getting big.  As a result, it can be immensely useful, when you're just experimenting and making sure your logic and types are correct, to avoid the compilation just for testing. 
+Whatever editor you choose, a pattern you will want to get into in Haskell is running things and experimenting in the interactive interpreter, known as \inlinecode{ghci} (accessible from \inlinecode{stack ghci} or \inlinecode{cabal repl}). Doing a full-on compilation of a Haskell program can take quite a long time, especially when your programs start getting big.  As a result, it can be immensely useful, when you're just experimenting and making sure your logic and types are correct, to avoid the compilation when possible. 
 
 \section{Hello World}
 
@@ -216,7 +216,21 @@ Change the text in the string to \inlinecode{"Hello World"}, save the file, and 
 \begin{verbatim}
 tombert@hostname: stack build
 tombert@hostname: stack exec testproject-exe
-Hello WOrld
+Hello World
 \end{verbatim}
 
-Congratulations, you are now a Haskell programmer.  
+Congratulations, you are now officially a Haskell programmer.  
+
+
+
+While I don't expect you to fully understand this program yet, I would like to direct your attention to \inlinecode{someFunc}, where you might notice that it has a weird bit of text right above it (\inlinecode{someFunc :: IO ()}). 
+
+This is a function type signature, and while we will go into more detail later in the book about their significance, it might be useful to look at the \inlinecode{IO ()} part.  This is the return type of the function.  The \inlinecode{IO} tells the compiler that this functoin returns something with the \inlinecode{IO} monad, which signifies that this function has side-effects, while the \inlinecode{()} is called ``unit", and is effectively the functional equivalent of \inlinecode{void}, and it indicates that we are not returning any kind of value from this function. 
+
+The reason that I bring all this up is to express this simple point: while a lot of problems actually become a lot when utilizing a pure-functional approach, other things (such as understanding how to write a simple ``Hello World" program), can require a basic understanding of Category Theory and Type Theory. 
+
+While this can be overwhelmingly scary at first, and is where Haskell gets its reputation as a ``hard" language, the more you use Haskell, the more you will start thinking about things in a functional style, and the more you will appreciate having to be explicit about side effects. 
+
+But we're getting ahead of ourselves, let's get started with the most fundamental part of functional programming: Functions. 
+
+

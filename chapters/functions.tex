@@ -1,22 +1,43 @@
 \chapter{Functions}
 \section{What is a function?}
-Let me get the shocking truth out right away: most languages don't have functions.  
+Let me get the shocking truth out right away: most programing languages don't have functions.  
 
-Of course, nearly every language has a concept of a ``function", and might have a keyword designated for it, but, in a mathematical sense, they don't follow the major properties of functions.  
+Of course, nearly every language has a concept of a ``function", and might even have a keyword designated for it. It might be useful in that programming language to think of these as ``functions", but if we talk in a purely mathematical sense, they don't measure up to the major properties of functions.  
 
-For example, in mathematics you may be familiar with the ``vertical line test" for checking whether a graph could represent a function. This simple procedure exists to show that for any single input value $ x $, in the function $f\left(x\right)$, you will always get the same value out.  
+Let us first look at Algebra, and examine the ``vertical line test" for checking whether a graph could possibly represent a function. This simple procedure exists to show that for any single input value $ x $, in the function $f\left(x\right)$, you will always get the same value out; that is to say, for any value $ x $, there exists \textit{at most one} value $ y $ which is the result of calling that function. 
 
-For example, let's look at the following function: 
-
-$$ f\left( x \right) = x ^ 2 $$ 
-
-If I supply the value $ 10 $ for $ x $, The result will \textit{always} be $ 100 $, no matter how many times I run it.  It will be $ 100 $ whether or not a certain file exists on a hard drive. It will be $100$ even if all of Google's servers break down.  It will be $100$ for always and forever simply because that is a property of functions. 
-
-Now, let's think about the JavaScript function \inlinecode{Date.now()}.  It superficially looks like a function, and returns a value.  Most of the documentation calls it a function, and in the way most programmers think of it, it might be considered a function in some kind of abstract sense. 
+This may seem like a trivial point, but let's look at the JavaScript function \inlinecode{Date.now()}.  It superficially looks like a function, and returns a value.  Most of the documentation calls it a function, and in the way most programmers think of it, it might be considered a function in some kind of abstract sense. 
 
 But \inlinecode{Date.now()} doesn't pass the vertical line test. \inlinecode{Date.now()} takes no arguments, but returns a different result upon every execution.  \inlinecode{Date.now()} is dependent on the computer's system clock, which is likely dependent on a service like NTP or \inlinecode{time.nist.gov}. 
 
+If I were to plot out the data mathematically, it would look something like this: (INSERT CHART)
 
+Now, let's compare this to this mathematical function: 
+
+$$ f\left( x \right) = x ^ 2 $$ 
+
+If I supply the value $ 10 $ for $ x $, The result will \textit{always} be $ 100 $, no matter how many times I run it.  It will be $ 100 $ whether or not a certain file exists on a hard drive. It will be $100$ even if all of Google's servers break down.  It will be $100$ for always and forever simply because that is a universal property of functions. 
+
+\subsection{Pure and Impure} 
 In functional programming, we distinguish between predictable, mathematical functions and functions dependent on external factors as \textit{pure} and \textit{impure}.  
 
 Besides simple predictability, pure functions have several other advantages.  By using them, it becomes easier to push more reliance onto the type system of the language, which allows the compiler to diagnose many most potential errors before. 
+
+Since impure functions require a basic understanding of monads, and since that can be a bit of a rabbit-hole in and of itself, we will focus on them in later chapters, and focus on pure functions in this chapter. 
+\section {Defining Functions}
+
+Functions in Haskell tend to be fairly close to what you do in math. For example, if we wanted to define the $ f\left( x \right) = x ^ 2 $ function from above, we'd write: 
+
+\begin{verbatim}
+f x = x * x
+\end{verbatim}
+
+Let's break each part down. 
+
+\begin{itemize}
+\item \inlinecode{f} is the name of the function.  
+\item The \inlinecode{x} before the \inlinecode{=} is a variable declaration. You can add as many variables as you would like, and you just need to separate them by spaces
+\item The \inlinecode{x * x} is the function body. Haskell is expression-based, not statement-based, so there is no need to explicitly call \inlinecode{return}
+\end {itemize}
+
+
