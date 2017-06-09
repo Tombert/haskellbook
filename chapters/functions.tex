@@ -118,9 +118,14 @@ subtractOneSquare = f . subtractOne
 Haskell composition follows the same properties as algebra in regards to precedence.  For example: 
 
 \begin{verbatim}
+
+squaresquaresquare = f . f . f
+squaresquaresquare' = (f . f) . f
+squaresquaresquare' = f . (f . f)
+
 \end{verbatim}
 
-
+Will all give you the same output.  This property can be useful for removing unnecessary parentheses, or adding parentheses for emphasis. 
 
 \section{Types}
 Of course, sometimes you will need concrete types in your program.  

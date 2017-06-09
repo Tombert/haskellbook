@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  9 JUN 2017 18:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex 2017.6.2)  9 JUN 2017 19:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,7 +440,7 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 ))
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (./main.aux
-(./chapters/foreword.aux) (./chapters/installation.aux)
+(./chapters/foreword.aux) (./chapters/installation.aux) (./chapters/types.aux)
 (./chapters/functions.aux))
 \openout1 = `main.aux'.
 
@@ -611,57 +611,66 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [7]
-\openout2 = `./chapters/functions.aux'.
+\openout2 = `./chapters/types.aux'.
 
- (./chapters/functions.tex [8
+ (./chapters/types.tex [8
 
 
 
 ]
 Chapter 2.
+) [9]
+\openout2 = `./chapters/functions.aux'.
+
+ (./chapters/functions.tex [10
+
+
+
+]
+Chapter 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9]
+ [11]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[10]
+[12]
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[11])
+[13])
 Underfull \hbox (badness 10000) has occurred while \output is active
 []
  []
 
-[12] (./main.aux (./chapters/foreword.aux) (./chapters/installation.aux)
-(./chapters/functions.aux)) ) 
+[14] (./main.aux (./chapters/foreword.aux) (./chapters/installation.aux)
+(./chapters/types.aux) (./chapters/functions.aux)) ) 
 Here is how much of TeX's memory you used:
- 3480 strings out of 493013
- 46081 string characters out of 6139318
- 120687 words of memory out of 5000000
- 6984 multiletter control sequences out of 15000+600000
+ 3488 strings out of 493013
+ 46225 string characters out of 6139318
+ 120995 words of memory out of 5000000
+ 6985 multiletter control sequences out of 15000+600000
  13954 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,9n,32p,718b,296s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx
-10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt10.pfb>
-Output written on main.pdf (18 pages, 184116 bytes).
+</usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmssi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (20 pages, 185518 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 77 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 82 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
