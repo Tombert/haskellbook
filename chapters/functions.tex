@@ -49,18 +49,85 @@ f :: Num a => a -> a
 
 We will go into more detail about the specifics when we get to our chapter on Typeclasses, but what this type signature says is allow any type \inlinecode{a} that is a number. The \inlinecode{Num} is effectively a constraint that only allows numbers to be sent into the function, and this can all be deduced at compile-time, by inferring it out of the arguments demanded from the \inlinecode{*}. 
 
-\subsection{Generic Types}
+\subsubsection{Generic Types}
 This type of generic programming should be familiar to anyone who has ever done anything with Java Generics or C++ templates. 
 
 While this kind of programming can be kind of cumbersome in imperative languages, it's largely automatic and simple in Haskell.  Most of the time, the types can be deduced automatically, and GHC is very good about making the functions as generic as possible.  
 
 As a result, it's easy to make your Haskell programs incredibly modular and reusable, and you'll find that most of the time, your functions can have many uses.  
 
+Haskell's type system is so unique and interesting that they'll get their own chapter in the future, so for now just remember that the lowercase \inlinecode{a} is a symbol for a generic type. 
+
+\section{Composing Functions}
+While many Haskell tutorials tend to wait until much later to start talks of function composition, I feel it's useful to learn basic composition early-on, if only to show the beauty of keeping your functions pure. 
+
+If you can again recall an example from Algebra, you might remember the circle operator defined like this: 
+$$
+f \circ g = f\left(g\left(x\right)\right)
+$$
+
+That is to say, for the $\circ$ operator, we apply the value of the right function and send its result into the first function. The final result is a new function that effectively "wraps" this procedure from us. 
+
+This operation is called ``composition", and it might seem so trival that it's not even worth talking about, and in it is actually a very simple operation. 
+
+However, this operation has one incredibly practical use; it's a mathematical way to glue computations together.  
+
+This should be familiar to anyone who has ever used the \inlinecode{|} (or ``pipe") tool in Unix, and indeed the philosophy is very similar.  By keeping functions small, and by focusing on having them do one thing and doing it well, and by giving a good framework to combine things together, we are able to largely eschew complexity.  
+
+What they might not have told you in algebra are a couple properties, such as:   
+
+$$
+\left(f \circ g\right) \circ h = f \circ \left(g \circ h \right) = f \circ g \circ h
+$$
+
+$$
+f \circ g \neq g \circ f
+$$
+
+Haskell has embraced this philosophy wholeheartedly, and has a special operator dedicated to it.  Since we don't have a $\circ$ operator readily available on our keyboards, Haskell has opted for the simple \inlinecode{.} operator.  For example, if we wanted a function that squares the result of our previous square function (\inlinecode{f x = x * x}), we could write it like this: 
+
+\begin{verbatim}
+fourthed = f . f
+\end{verbatim}
+
+If you type this into GHCI, then you should then be able to type 
+
+\begin{verbatim}
+Main Lib> fourthed 2
+16
+\end{verbatim}
+
+This worked by first applying $2$ to the right \inlinecode{f}. This would result in $2 \times 2$, which of course gives us $4$. It then applies that $4$ to the \inlinecode{f}, which results in $4 \times 4$, which gives us 16. 
+
+The brilliance of this is that both of the instances of \inlinecode{f} are completely decoupled and modular.  If I instead wanted to subtract $1$ from the final result instead of squaring it, I could write something like this: 
+
+\begin{verbatim}
+subtractOne x = x - 1
+
+squareThenSubtract = subtractOne . f
+\end{verbatim}
+
+Or if I wanted to square the the result of that: 
+
+\begin{verbatim}
+
+subtractOneSquare = f . subtractOne
+
+\end{verbatim}
+
+Haskell composition follows the same properties as algebra in regards to precedence.  For example: 
+
+\begin{verbatim}
+\end{verbatim}
+
+
+
 \section{Types}
 Of course, sometimes you will need concrete types in your program.  
 
 Types in Haskell are designated as beginning with a capital letter, and the standard bunch of types you've seen in most other languages are included: 
 
+(Make a chapter about types)
 \begin{itemize}
 \item \inlinecode{Double} - A double-precision floating-point number. 
 \item \inlinecode{Int} - A 32-bit integer. 
