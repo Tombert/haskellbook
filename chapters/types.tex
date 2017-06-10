@@ -1,0 +1,18 @@
+\chapter{Types}
+
+In the beginning, computers could only be programmed in binary.  $1$'s and $0$'s were painstakingly placed encoded by hand, and the pure logicians following the Boolean philosophy. 
+
+Once compilers hit the scene, these calculations could be done automatically.  No longer were you manually constantly mapping out how many bytes each variable would uses, and instead describe the data in a more abstract sense, using \inlinecode{int}, or \inlinecode{float}. 
+
+The \inlinecode{C}s, \inlinecode{C++}s, and \inlinecode{Java}s of the world have kept this philosophy for types.  The types exist as an optimization for the compiler, and largely serve little other purpose. 
+
+\paragraph{}
+Haskell takes the types to a higher level, and makes them a useful, itegral part of the development.  
+
+For the most part, Haskell can deduce the types of your function. 
+
+\paragraph{}
+Of course this can work, but there exists some issues: 
+\begin{itemize}
+\item Variables initialized from the outside world end with the infamously difficult-to-debug \inlinecode{null} reference error. 
+\end{itemize}
